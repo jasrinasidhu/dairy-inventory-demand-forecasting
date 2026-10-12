@@ -6,10 +6,10 @@ AI models for dairy retail: demand forecasting, low-stock prediction and pricing
 
 | Model | Method | Result |
 |---|---|---|
-| Demand Forecasting | 7-Day Moving Average | MAE 843.7 |
-| Low-Stock Classification | Logistic Regression | Accuracy 96.5%, Recall 1.00 |
+| Demand Forecasting | 7-Day Moving Average | MAE 510.2 (training average baseline: 508.1) |
+| Low-Stock Classification | Logistic Regression | Accuracy 76.9%, Recall 0.80, AUC 0.85 |
 | Pricing Prediction | Linear Regression | R² -0.01 (features did not explain price) |
 
-**Note:** The low-stock label was based on stock and threshold columns that were also model inputs, which explains the near-perfect scores. Next step is to predict future shortages using only current information.
+**Note:** The notebook was revised after submission, so results differ from the report. Demand is now measured as quantity sold, the forecast is compared against simple baselines, and the low-stock model only uses information available before sales. In the original version, stock and sales columns were model inputs, and stock was calculated directly from them, which explained the near-perfect scores.
 
 **Tech:** Python, Scikit-learn, Pandas, Matplotlib, Seaborn, Gradio
